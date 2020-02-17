@@ -73,6 +73,8 @@ $ pip install requests
 
 其中csv表格中固定会有``comment_id``、``comment_username``、``title``、``author``、``comment_content``这几个参数
 
+**目前csv文件以utf8编码保存，在修复gbk编码报错之前，需要手动用gbk编码保存才可以在Excel上正常浏览！**
+
 ## 配置文件
 
 在config.json可以调整配置，其中可选配置如下：

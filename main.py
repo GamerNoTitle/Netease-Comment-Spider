@@ -7,12 +7,12 @@ from array import array
 import time
 start_Pro=datetime.datetime.now()
 def create_csv(path):
-    with open(path,"w+",newline="",encoding="gbk") as file:    # 打开文件，也相当于一个回车，避免覆盖文档
+    with open(path,"w+",newline="",encoding='utf8') as file:    # 打开文件，也相当于一个回车，避免覆盖文档
         csv_file = csv.writer(file)
         head = heads # 创建csv表头
         csv_file.writerow(head)
 def append_csv(path):
-    with open(path,"a+",newline='',encoding="gbk") as file:
+    with open(path,"a+",newline='',encoding="utf8") as file:
         csv_file = csv.writer(file)
         data = [inputs]
         csv_file.writerows(data)
@@ -61,14 +61,14 @@ while True:
                 print("未抓取过的结果，正在存入文件……")
                 inputs = []
                 if(conf['song_id']): inputs.append(data['song_id'])
-                inputs.append(data['title'])
-                inputs.append(data['author'])
-                if(conf['album']): inputs.append(data['album'])
-                if(conf['description']): inputs.append(data['description'])
+                inputs.append(data['title'].encode('gbk'))
+                inputs.append(data['author'].encode('gbk'))
+                if(conf['album']): inputs.append(data['album'].encode('gbk'))
+                if(conf['description']): inputs.append(data['description'].encode('gbk'))
                 if(conf['pub_date']): inputs.append(data['pub_date'])
                 inputs.append(data['comment_id'])
-                inputs.append(data["comment_nickname"])
-                inputs.append(data['comment_content'])
+                inputs.append(data["comment_nickname"].encode('gbk'))
+                inputs.append(data['comment_content'].encode('gbk'))
                 if(conf['comment_user_id']): inputs.append(data['comment_user_id'])
                 if(conf['comment_pub_date']): inputs.append(data['comment_pub_date'])
                 append_csv(path)
@@ -80,14 +80,14 @@ while True:
     else:
         inputs = []
         if(conf['song_id']): inputs.append(data['song_id'])
-        inputs.append(data['title'])
-        inputs.append(data['author'])
-        if(conf['album']): inputs.append(data['album'])
-        if(conf['description']): inputs.append(data['description'])
+        inputs.append(data['title'].encode('gbk'))
+        inputs.append(data['author'].encode('gbk'))
+        if(conf['album']): inputs.append(data['album'].encode('gbk'))
+        if(conf['description']): inputs.append(data['description'].encode('gbk'))
         if(conf['pub_date']): inputs.append(data['pub_date'])
         inputs.append(data['comment_id'])
-        inputs.append(data["comment_nickname"])
-        inputs.append(data['comment_content'])
+        inputs.append(data["comment_nickname"].encode('gbk'))
+        inputs.append(data['comment_content'].encode('gbk'))
         if(conf['comment_user_id']): inputs.append(data['comment_user_id'])
         if(conf['comment_pub_date']): inputs.append(data['comment_pub_date'])
         append_csv(path)
