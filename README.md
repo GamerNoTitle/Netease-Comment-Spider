@@ -130,3 +130,5 @@ $ pip install requests
 - [x] 自定义超时时间
 - [ ] 自带将获取到的unicode转换为gbk
 - [x] json文件支持
+- [ ] 专辑图片下载
+- [ ] 用户头像下载

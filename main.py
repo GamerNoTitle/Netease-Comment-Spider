@@ -45,6 +45,7 @@ i = 1
 while True:
     if(i==num+1): break
     time.sleep(delay)
+    print("---------------------------------------------------")
     print("正在调用api……")
     res = r.get("https://www.mouse123.cn/api/163/api.php",timeout=timeout)  # 调用api
     data = res.json()   # 转化为json字符串
