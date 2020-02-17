@@ -1,14 +1,14 @@
 {
     "path": "Netease.csv",
-    "times": 3,
+    "times": 100,
     "delay": 0,
     "timeout": 60,
-    "song_id": true,
-    "images": true,
-    "album": true,
-    "description": true,
-    "pub_date": true,
-    "comment_user_id": true,
-    "comment_avatar_url": true,
-    "comment_pub_date": true
+    "song_id": false,
+    "images": false,
+    "album": false,
+    "description": false,
+    "pub_date": false,
+    "comment_user_id": false,
+    "comment_avatar_url": false,
+    "comment_pub_date": false
 }
