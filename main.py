@@ -58,6 +58,7 @@ while True:
                 break
             elif(t==len(temp)-1):
                 print("未抓取过的结果，正在存入文件……")
+                inputs = []
                 if(conf['song_id']): inputs.append(data['song_id'])
                 inputs.append(data['title'])
                 inputs.append(data['author'])
@@ -76,6 +77,7 @@ while True:
                 i=i+1
                 break
     else:
+        inputs = []
         if(conf['song_id']): inputs.append(data['song_id'])
         inputs.append(data['title'])
         inputs.append(data['author'])
