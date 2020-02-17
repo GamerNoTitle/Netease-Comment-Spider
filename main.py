@@ -61,17 +61,27 @@ while True:
                 print("未抓取过的结果，正在存入文件……")
                 inputs = []
                 if(conf['song_id']): inputs.append(data['song_id'])
-                inputs.append(data['title'].encode('gbk'))
-                inputs.append(data['author'].encode('gbk'))
-                if(conf['album']): inputs.append(data['album'].encode('gbk'))
-                if(conf['description']): inputs.append(data['description'].encode('gbk'))
+                inputs.append(data['title'])
+                inputs.append(data['author'])
+                if(conf['album']): inputs.append(data['album'])
+                if(conf['description']): inputs.append(data['description'])
                 if(conf['pub_date']): inputs.append(data['pub_date'])
                 inputs.append(data['comment_id'])
-                inputs.append(data["comment_nickname"].encode('gbk'))
-                inputs.append(data['comment_content'].encode('gbk'))
+                inputs.append(data["comment_nickname"])
+                inputs.append(data['comment_content'])
                 if(conf['comment_user_id']): inputs.append(data['comment_user_id'])
                 if(conf['comment_pub_date']): inputs.append(data['comment_pub_date'])
                 append_csv(path)
+                if(conf['images']):
+                    print("正在保存专辑封面……")
+                    image = r.get(data['images']).content
+                    with open('images/' + data['comment_id'] + '.jpg', 'wb') as f:
+                        f.write(image)
+                if(conf['comment_avatar_url']):
+                    print("正在保存评论用户头像……")
+                    image = r.get(data['comment_avatar_url']).content
+                    with open('./avatars/' + data['comment_id'] + '.jpg', 'wb') as f:
+                        f.write(image)
                 temp.append(int(data["comment_id"]))
                 end_Pro=datetime.datetime.now()
                 print("已完成数量："+str(i)+'，已经用时：'+str(end_Pro-start_Pro))
@@ -80,17 +90,27 @@ while True:
     else:
         inputs = []
         if(conf['song_id']): inputs.append(data['song_id'])
-        inputs.append(data['title'].encode('gbk'))
-        inputs.append(data['author'].encode('gbk'))
-        if(conf['album']): inputs.append(data['album'].encode('gbk'))
-        if(conf['description']): inputs.append(data['description'].encode('gbk'))
+        inputs.append(data['title'])
+        inputs.append(data['author'])
+        if(conf['album']): inputs.append(data['album'])
+        if(conf['description']): inputs.append(data['description'])
         if(conf['pub_date']): inputs.append(data['pub_date'])
         inputs.append(data['comment_id'])
-        inputs.append(data["comment_nickname"].encode('gbk'))
-        inputs.append(data['comment_content'].encode('gbk'))
+        inputs.append(data["comment_nickname"])
+        inputs.append(data['comment_content'])
         if(conf['comment_user_id']): inputs.append(data['comment_user_id'])
         if(conf['comment_pub_date']): inputs.append(data['comment_pub_date'])
         append_csv(path)
+        if(conf['images']):
+            print("正在保存专辑封面……")
+            image = r.get(data['images']).content
+            with open('images/' + data['comment_id'] + '.jpg', 'wb') as f:
+                f.write(image)
+        if(conf['comment_avatar_url']):
+            print("正在保存评论用户头像……")
+            image = r.get(data['comment_avatar_url']).content
+            with open('./avatars/' + data['comment_id'] + '.jpg', 'wb') as f:
+                f.write(image)
         temp.append(int(data["comment_id"]))
         end_Pro=datetime.datetime.now()
         print("已完成数量："+str(i)+'，已经用时：'+str(end_Pro-start_Pro))
