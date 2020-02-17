@@ -71,7 +71,7 @@ $ pip install requests
 
 来进行相关依赖库的安装！
 
-其中csv表格中固定会有
+其中csv表格中固定会有``comment_id``、``comment_username``、``title``、``author``、``comment_content``这几个参数
 
 ## 配置文件
 

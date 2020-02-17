@@ -62,7 +62,8 @@ while True:
                 i=i+1
                 break
     else:
-        inputs = [data['comment_id'],]
+        inputs = [data['comment_id'],data['comment_username']]
+        if(conf['song_id']): inputs.append(data['song_id'])
         # print(res.text) # 输出一言，如需要把最前面的#去掉即可
         append_csv(path)
         temp.append(data["comment_id"])
