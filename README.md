@@ -82,6 +82,8 @@ $ pip install requests
 
 **如果打开了图片下载出现找不到文件的情况，请检查是否将avatars文件夹和images文件夹删除！！！**
 
+如果这个项目帮助了你，不妨点一个Star？
+
 ## 配置文件
 
 在config.json可以调整配置，其中可选配置如下：
