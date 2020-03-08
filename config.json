@@ -1,6 +1,6 @@
 {
     "path": "Netease.csv",
-    "times": 100,
+    "times": 3,
     "delay": 0,
     "timeout": 60,
     "song_id": false,
